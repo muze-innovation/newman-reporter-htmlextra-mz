@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+  {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> --}}
   <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
 
 <style>
@@ -434,6 +435,264 @@ body.theme-light code {
     min-width: 600px; 
     max-width: 600px; 
     white-space: normal;
+}
+
+body.theme-light .stackoverflow-theme {
+    /*!
+    Theme: StackOverflow Light
+    Description: Light theme as used on stackoverflow.com
+    Author: stackoverflow.com
+    Maintainer: @Hirse
+    Website: https://github.com/StackExchange/Stacks
+    License: MIT
+    Updated: 2021-05-15
+
+    Updated for @stackoverflow/stacks v0.64.0
+    Code Blocks: /blob/v0.64.0/lib/css/components/_stacks-code-blocks.less
+    Colors: /blob/v0.64.0/lib/css/exports/_stacks-constants-colors.less
+    */
+
+    .hljs {
+    /* var(--highlight-color) */
+    color: #2f3337;
+    /* var(--highlight-bg) */
+    background: #f6f6f6;
+    }
+
+    .hljs-subst {
+    /* var(--highlight-color) */
+    color: #2f3337;
+    }
+
+    .hljs-comment {
+    /* var(--highlight-comment) */
+    color: #656e77;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-meta .hljs-keyword,
+    .hljs-doctag,
+    .hljs-section {
+    /* var(--highlight-keyword) */
+    color: #015692;
+    }
+
+    .hljs-attr {
+    /* var(--highlight-attribute); */
+    color: #015692;
+    }
+
+    .hljs-attribute {
+    /* var(--highlight-symbol) */
+    color: #803378;
+    }
+
+    .hljs-name,
+    .hljs-type,
+    .hljs-number,
+    .hljs-selector-id,
+    .hljs-quote,
+    .hljs-template-tag {
+    /* var(--highlight-namespace) */
+    color: #b75501;
+    }
+
+    .hljs-selector-class {
+    /* var(--highlight-keyword) */
+    color: #015692;
+    }
+
+    .hljs-string,
+    .hljs-regexp,
+    .hljs-symbol,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-link,
+    .hljs-selector-attr {
+    /* var(--highlight-variable) */
+    color: #54790d;
+    }
+
+    .hljs-meta,
+    .hljs-selector-pseudo {
+    /* var(--highlight-keyword) */
+    color: #015692;
+    }
+
+    .hljs-built_in,
+    .hljs-title,
+    .hljs-literal {
+    /* var(--highlight-literal) */
+    color: #b75501;
+    }
+
+    .hljs-bullet,
+    .hljs-code {
+    /* var(--highlight-punctuation) */
+    color: #535a60;
+    }
+
+    .hljs-meta .hljs-string {
+    /* var(--highlight-variable) */
+    color: #54790d;
+    }
+
+    .hljs-deletion {
+    /* var(--highlight-deletion) */
+    color: #c02d2e;
+    }
+
+    .hljs-addition {
+    /* var(--highlight-addition) */
+    color: #2f6f44;
+    }
+
+    .hljs-emphasis {
+    font-style: italic;
+    }
+
+    .hljs-strong {
+    font-weight: bold;
+    }
+
+    .hljs-formula,
+    .hljs-operator,
+    .hljs-params,
+    .hljs-property,
+    .hljs-punctuation,
+    .hljs-tag {
+    /* purposely ignored */
+    }
+}
+
+body.theme-dark .stackoverflow-theme {
+    /*!
+    Theme: StackOverflow Dark
+    Description: Dark theme as used on stackoverflow.com
+    Author: stackoverflow.com
+    Maintainer: @Hirse
+    Website: https://github.com/StackExchange/Stacks
+    License: MIT
+    Updated: 2021-05-15
+
+    Updated for @stackoverflow/stacks v0.64.0
+    Code Blocks: /blob/v0.64.0/lib/css/components/_stacks-code-blocks.less
+    Colors: /blob/v0.64.0/lib/css/exports/_stacks-constants-colors.less
+    */
+
+    .hljs {
+    /* var(--highlight-color) */
+    color: #ffffff;
+    /* var(--highlight-bg) */
+    background: #1c1b1b;
+    }
+
+    .hljs-subst {
+    /* var(--highlight-color) */
+    color: #ffffff;
+    }
+
+    .hljs-comment {
+    /* var(--highlight-comment) */
+    color: #999999;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-meta .hljs-keyword,
+    .hljs-doctag,
+    .hljs-section {
+    /* var(--highlight-keyword) */
+    color: #88aece;
+    }
+
+    .hljs-attr {
+    /* var(--highlight-attribute); */
+    color: #88aece;
+    }
+
+    .hljs-attribute {
+    /* var(--highlight-symbol) */
+    color: #c59bc1;
+    }
+
+    .hljs-name,
+    .hljs-type,
+    .hljs-number,
+    .hljs-selector-id,
+    .hljs-quote,
+    .hljs-template-tag {
+    /* var(--highlight-namespace) */
+    color: #f08d49;
+    }
+
+    .hljs-selector-class {
+    /* var(--highlight-keyword) */
+    color: #88aece;
+    }
+
+    .hljs-string,
+    .hljs-regexp,
+    .hljs-symbol,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-link,
+    .hljs-selector-attr {
+    /* var(--highlight-variable) */
+    color: #b5bd68;
+    }
+
+    .hljs-meta,
+    .hljs-selector-pseudo {
+    /* var(--highlight-keyword) */
+    color: #88aece;
+    }
+
+    .hljs-built_in,
+    .hljs-title,
+    .hljs-literal {
+    /* var(--highlight-literal) */
+    color: #f08d49;
+    }
+
+    .hljs-bullet,
+    .hljs-code {
+    /* var(--highlight-punctuation) */
+    color: #cccccc;
+    }
+
+    .hljs-meta .hljs-string {
+    /* var(--highlight-variable) */
+    color: #b5bd68;
+    }
+
+    .hljs-deletion {
+    /* var(--highlight-deletion) */
+    color: #de7176;
+    }
+
+    .hljs-addition {
+    /* var(--highlight-addition) */
+    color: #76c490;
+    }
+
+    .hljs-emphasis {
+    font-style: italic;
+    }
+
+    .hljs-strong {
+    font-weight: bold;
+    }
+
+    .hljs-formula,
+    .hljs-operator,
+    .hljs-params,
+    .hljs-property,
+    .hljs-punctuation,
+    .hljs-tag {
+    /* purposely ignored */
+    }
 }
 
 </style>
@@ -976,7 +1235,7 @@ body.theme-light code {
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-white text-center bg-info">Request Body</h5>
                                 <div class="dyn-height">
-                                    <pre><code id="copyReqText-{{@key}}" class="prettyPrint">{{body.raw}}</code></pre>
+                                    <pre><code id="copyReqText-{{@key}}" class="prettyPrint stackoverflow-theme">{{body.raw}}</code></pre>
                                 </div>
                                 <div class="card-footer">
                                     <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyReqText-{{@key}}">Copy to Clipboard</button>
@@ -1003,7 +1262,7 @@ body.theme-light code {
                                     <div class="card-body">
                                         <h5 class="card-title text-uppercase text-white text-center bg-info">Request Body</h5>
                                         <div class="dyn-height">
-                                            <pre><code id="copyReqText-{{@key}}" class="prettyPrint">{{formdata body.formdata.members}}</code></pre>
+                                            <pre><code id="copyReqText-{{@key}}" class="prettyPrint stackoverflow-theme">{{formdata body.formdata.members}}</code></pre>
                                         </div>
                                         <div class="card-footer">
                                             <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyReqText-{{@key}}">Copy to Clipboard</button>
@@ -1030,7 +1289,7 @@ body.theme-light code {
                                     <div class="card-body">
                                         <h5 class="card-title text-uppercase text-white text-center bg-info">Request Body</h5>
                                         <div class="dyn-height">
-                                            <pre><code id="copyReqText-{{@key}}" class="prettyPrint">{{formdata body.urlencoded.members}}</code></pre>
+                                            <pre><code id="copyReqText-{{@key}}" class="prettyPrint stackoverflow-theme">{{formdata body.urlencoded.members}}</code></pre>
                                         </div>
                                         <div class="card-footer">
                                             <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyReqText-{{@key}}">Copy to Clipboard</button>
@@ -1057,7 +1316,7 @@ body.theme-light code {
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-white text-center bg-info">Request Body</h5>
                                 <div class="dyn-height">
-                                    <pre><code id="copyReqText-{{@key}}" class="prettyPrint">{{body.graphql.query}}</code></pre>
+                                    <pre><code id="copyReqText-{{@key}}" class="prettyPrint stackoverflow-theme">{{body.graphql.query}}</code></pre>
                                 </div>
                                 <div class="card-footer">
                                     <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyReqText-{{@key}}">Copy to Clipboard</button>
@@ -1065,7 +1324,7 @@ body.theme-light code {
                                 {{#if body.graphql.variables }}
                                 <h6 class="card-title text-uppercase text-white text-center bg-info">Graphql Variables</h6>
                                 <div class="dyn-height">
-                                    <pre><code id="copyReqText-{{@key}}" class="prettyPrint">{{body.graphql.variables}}</code></pre>
+                                    <pre><code id="copyReqText-{{@key}}" class="prettyPrint stackoverflow-theme">{{body.graphql.variables}}</code></pre>
                                 </div>
                                 {{/if}}
                         </div>
@@ -1121,7 +1380,7 @@ body.theme-light code {
                             <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                             {{#if response.body}}
                                 <div class="dyn-height">
-                                        <pre><code id="copyText-{{item.id}}" class="prettyPrint">{{response.body}}</code></pre>
+                                        <pre><code id="copyText-{{item.id}}" class="prettyPrint stackoverflow-theme">{{response.body}}</code></pre>
                                 </div>
                                 <div class="card-footer">
                                     <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-{{item.id}}">Copy to Clipboard</button>
@@ -1151,7 +1410,7 @@ body.theme-light code {
                                     <tbody>
                                         {{#each consoleLogs}}
                                         <tr>
-                                            <td style="word-wrap: break-word;min-width: 160px;max-width: 160px;"><pre><code class="prettyPrint">{{#each messages}}{{this}}{{/each}}</code></pre></td>
+                                            <td style="word-wrap: break-word;min-width: 160px;max-width: 160px;"><pre><code class="prettyPrint stackoverflow-theme">{{#each messages}}{{this}}{{/each}}</code></pre></td>
                                         </tr>
                                         {{/each}}
                                     </tbody>
@@ -1228,7 +1487,7 @@ body.theme-light code {
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Script</h5>
                                     <div class="dyn-height">
                                         {{#each testScripts}}
-                                        <pre><code class="prettyPrint">{{this}}</code></pre>
+                                        <pre><code class="prettyPrint language-javascript stackoverflow-theme">{{this}}</code></pre>
                                         <hr>
                                         {{/each}}
                                     </div>
@@ -1262,9 +1521,12 @@ body.theme-light code {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
 {{#eq noSyntaxHighlighting false}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.highlightAll();</script>
 {{/eq}}
 
 <!-- Set slider initial position depending on the localstorage state -->
@@ -1490,6 +1752,8 @@ $(".prettyPrint").each(function () {
         {
             obj = JSON.parse(data);
             data = JSON.stringify(obj, null, 2);
+            // manually add the language class
+            this.className += ' language-json';
         }
         else if(isXML(data)) {
             data = formatXML(data);
