@@ -1218,6 +1218,27 @@ body.theme-light code {
                                 </div>
                             </div>
                             </div>
+                            {{#if testScripts.length}}
+                            {{#unless @root.omitTestScript}}
+                            <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card-deck">
+                                <div class="card border-info" style="width: 50rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title text-uppercase text-white text-center bg-info">Test Script</h5>
+                                    <div class="dyn-height">
+                                        {{#each testScripts}}
+                                        <pre><code class="prettyPrint">{{this}}</code></pre>
+                                        <hr>
+                                        {{/each}}
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            {{/unless}}
+                            {{/if}}
                             {{else}}
                             <h5 class="alert alert-success text-uppercase text-center">No Tests for this request</h5>
                             {{/if}}
@@ -1242,6 +1263,7 @@ body.theme-light code {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
 {{#eq noSyntaxHighlighting false}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 {{/eq}}
 
@@ -1466,11 +1488,16 @@ $(".prettyPrint").each(function () {
         // Verify whether data is JSON
         if(isJSON(data))
         {
-                obj = JSON.parse(data);
-                data = JSON.stringify(obj, null, 2);
+            obj = JSON.parse(data);
+            data = JSON.stringify(obj, null, 2);
         }
         else if(isXML(data)) {
             data = formatXML(data);
+        } else {
+            data = js_beautify(data, {
+                indent_size: 2,
+                space_in_empty_paren: true
+            });
         }
         $(this).text(data);
 });

@@ -18,6 +18,7 @@ program
     .option('--reporter-htmlextra-skipHeaders', 'Exclude certain `Headers` from the final report')
     .option('--reporter-htmlextra-omitRequestBodies', 'Exclude all `Request Bodies` from the final report')
     .option('--reporter-htmlextra-omitResponseBodies', 'Exclude all `Response Bodies` from the final report')
+    .option('--reporter-htmlextra-omitTestScript', 'Exclude the Test Script secion from the final report')
     .option('--reporter-htmlextra-hideRequestBody', 'Exclude certain `Request Bodies` from the final report')
     .option('--reporter-htmlextra-hideResponseBody', 'Exclude certain `Response Bodies` from the final report')
     .option('--reporter-htmlextra-showEnvironmentData', 'Displays all the `Environment` variables used during the run')
@@ -31,7 +32,7 @@ program
 
 program
     .addHelpCommand(false)
-    .usage('newman run [collection file | link] -r htmlextra [option]')
+    .usage('newman run [collection file | link] -r htmlextra-mz [option]')
     .version(version, '-v, --version', 'HTMLEXTRA version');
 
 if (process.argv.length < 3) {
