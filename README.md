@@ -1,4 +1,11 @@
-# newman-reporter-htmlextra
+# newman-reporter-htmlextra-mz
+
+## Added features
+
+1. Add Test Script section to the HTML report
+2. Add JS syntax highlighting
+
+----
 
 ![Newman htmlextra Reporter Logo](./examples/NewmanHtmlextraReporterLogo.png)
 

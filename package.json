@@ -1,7 +1,7 @@
 {
-  "name": "newman-reporter-htmlextra-mz",
+  "name": "@muzeinnovation/newman-reporter-htmlextra-mz",
   "version": "1.0.0",
-  "description": "A newman reporter with added handlebars helpers and separated request iterations",
+  "description": "forked from newman-reporter-htmlextra ",
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
@@ -13,10 +13,6 @@
     "local-dev": "npm link && cd node_modules/newman && npm link newman-reporter-htmlextra-mz && cd ../.."
   },
   "deprecated": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DannyDainton/newman-reporter-htmlextra.git"
-  },
   "keywords": [
     "newman",
     "reporter",
@@ -24,7 +20,7 @@
     "htmlextra"
   ],
   "bin": {
-    "newman-reporter-htmlextra": "./bin/htmlextra.js"
+    "newman-reporter-htmlextra-mz": "./bin/htmlextra.js"
   },
   "files": [
     "bin/",
@@ -68,5 +64,14 @@
     "recursive-readdir": "^2.2.2",
     "shelljs": "^0.8.4"
   },
-  "snyk": false
+  "snyk": false,
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github:muze-innovation/newman-reporter-htmlextra-mz.git"
+  }
 }
