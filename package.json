@@ -1,5 +1,5 @@
 {
-  "name": "@muzeinnovation/newman-reporter-htmlextra-mz",
+  "name": "newman-reporter-htmlextra-mz",
   "version": "1.0.0",
   "description": "forked from newman-reporter-htmlextra ",
   "main": "index.js",
