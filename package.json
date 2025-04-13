@@ -1,6 +1,6 @@
 {
   "name": "newman-reporter-htmlextra-mz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "forked from newman-reporter-htmlextra ",
   "main": "index.js",
   "preferGlobal": true,
