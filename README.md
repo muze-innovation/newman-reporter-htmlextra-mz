@@ -2,6 +2,12 @@
 
 ## Added features
 
+#### 1.0.1
+
+1. Add nested folders
+
+#### 1.0.0
+
 1. Add Test Script section to the HTML report
 2. Add JS syntax highlighting
 
