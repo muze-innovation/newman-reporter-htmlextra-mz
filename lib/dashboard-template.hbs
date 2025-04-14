@@ -1075,6 +1075,18 @@ body.theme-dark .stackoverflow-theme {
 {{#each aggregations}}
     {{#isNotIn parent.name @root.skipFolders}}
         {{#if parent.name }}
+
+            {{#each parent.toStartFolder}}
+                <div class="alert alert-dark text-uppercase text-center iteration-{{../parent.iteration}}">
+                    <a data-toggle="collapse" href="#" data-target="#folder-collapse-{{id}}-iteration-{{../parent.iteration}}" aria-expanded="false" aria-controls="collapse" id="folder-{{id}}-iteration-{{../parent.iteration}}" class="collapsed text-dark z-block">
+                    <i class="fas fa-info-circle float-left resultsInfoPass" {{#each executions}}{{#if cumulativeTests.failed}} style="color: #c24a3f; padding-top: 4px;"{{/if}}{{/each}}></i>{{name}}
+                    <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
+                    </a>
+                </div>
+                <div id="folder-collapse-{{id}}-iteration-{{../parent.iteration}}" class="collapse" aria-labelledby="folder-{{id}}">
+            {{/each}}
+
+
             <div class="alert alert-dark text-uppercase text-center iteration-{{parent.iteration}}">
             <a data-toggle="collapse" href="#" data-target="#folder-collapse-{{parent.id}}-iteration-{{parent.iteration}}" aria-expanded="false" aria-controls="collapse" id="folder-{{parent.id}}-iteration-{{parent.iteration}}" class="collapsed text-dark z-block">
             <i class="fas fa-info-circle float-left resultsInfoPass" {{#each executions}}{{#if cumulativeTests.failed}} style="color: #c24a3f; padding-top: 4px;"{{/if}}{{/each}}></i>
@@ -1084,6 +1096,10 @@ body.theme-dark .stackoverflow-theme {
             <div id="folder-collapse-{{parent.id}}-iteration-{{parent.iteration}}" class="collapse" aria-labelledby="folder-{{parent.id}}">
             {{> aggregations}}
             </div>
+
+            {{#each parent.toEndFolder}}
+                </div>
+            {{/each}}
         {{else}}
             {{> aggregations}}
         {{/if}}
@@ -1580,6 +1596,10 @@ let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
         {{#each aggregations}}
+            {{#each parent.toStartFolder}}
+                $('#folder-{{id}}-iteration-{{../parent.iteration}}').removeClass('collapsed')
+                $('#folder-collapse-{{id}}-iteration-{{../parent.iteration}}').addClass('show')
+            {{/each}}
             $('#folder-{{parent.id}}-iteration-{{parent.iteration}}').removeClass('collapsed')
             $('#folder-collapse-{{parent.id}}-iteration-{{parent.iteration}}').addClass('show')
         {{/each}}
@@ -1587,6 +1607,10 @@ switch (clickCount){
         break;
     case 2:
         {{#each aggregations}}
+            {{#each parent.toStartFolder}}
+                $('#folder-{{id}}-iteration-{{../parent.iteration}}').addClass('collapsed')
+                $('#folder-collapse-{{id}}-iteration-{{../parent.iteration}}').removeClass('show')
+            {{/each}}
             $('#folder-{{parent.id}}-iteration-{{parent.iteration}}').addClass('collapsed')
             $('#folder-collapse-{{parent.id}}-iteration-{{parent.iteration}}').removeClass('show')
         {{/each}}
