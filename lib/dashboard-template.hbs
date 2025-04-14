@@ -1554,9 +1554,8 @@ body.theme-dark .stackoverflow-theme {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/2.0.1/remarkable.min.js"></script>
 {{#eq noSyntaxHighlighting false}}
-{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
@@ -1840,17 +1839,14 @@ $(".prettyPrint").each(function () {
 <!-- Render the Description Markdown and link in the test failures -->
 
 <script>
-    const remarkable = new Remarkable();
+    const remarkable = new window.remarkable.Remarkable();
 
     const descriptions = document.querySelectorAll(".renderMarkdown");
     descriptions.forEach(description => {
         description.innerHTML = renderHtmlFromMarkdown(description.textContent);
     });
     function renderHtmlFromMarkdown(markdown) {
-        return remarkable.render(trim(markdown));
-    }
-    function trim(string) {
-        return string ? string.replace(/^ +| +$/gm, "") : string;
+        return remarkable.render(markdown);
     }
 </script>
 
