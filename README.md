@@ -2,6 +2,11 @@
 
 ## Added features
 
+#### 1.0.2
+
+1. Fix Markdown rendering by properly removing leading spaces from lines
+2. Fix reading options name
+
 #### 1.0.1
 
 1. Add nested folders
