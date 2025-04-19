@@ -1846,7 +1846,33 @@ $(".prettyPrint").each(function () {
         description.innerHTML = renderHtmlFromMarkdown(description.textContent);
     });
     function renderHtmlFromMarkdown(markdown) {
-        return remarkable.render(markdown);
+        return remarkable.render(attemptToRemoveLeadingSpaces(markdown));
+    }
+    // Attempt to remove leading spaces and still retain proper indent
+    // first find the non-zero lowest number of leading spaces
+    // then remove leading spaces using that number
+    function attemptToRemoveLeadingSpaces(markdown) {
+        const lines = markdown.split('\n');
+        const count = lines.reduce((c, v) => {
+            const m = v.match(/^ +/);
+            if (m && m[0].length > 0) {
+                if (c === -1) {
+                    c = m[0].length;
+                } else {
+                    c = c < m[0].length ? c : m[0].length;
+                }
+            }
+            return c;
+        }, -1);
+
+        if (count > 0) {
+            const re = new RegExp(`^ {${count}}`);
+            return lines.map((v) => {
+                return v.replace(re, '');
+            }).join('\n');
+        }
+
+        return markdown;
     }
 </script>
 
